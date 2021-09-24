@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        input {
+            /*去除阴影*/
+            box-shadow: none;
+            /*聚焦input的蓝色边框*/
+            outline: none;
+            /*textarea 禁止拖拽*/
+            resize: none;
+            /*去除边框*/
+            border: none;
+            /*常用于IOS下移除原生样式*/
+            -webkit-appearance: none;
+            /*点击高亮的颜色*/
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background-color: transparent;
+        }
+        
+        .topbar {
+            height: 40px;
+            background-color: #333333;
+        }
+        
+        .topbar .topbar-content {
+            width: 1226px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 auto;
+        }
+        
+        .main {
+            width: 1226px;
+            margin: 0 auto;
+            margin-bottom: 26px;
+        }
+        
+        .topbar-content a:hover {
+            color: #ff6a00;
+        }
+        
+        .topbar-content {
+            font-size: 12px;
+        }
+        
+        .topbar-content a {
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            color: #b0b0b0;
+        }
+        
+        .topbar-content .tobar-left {
+            float: left;
+        }
+        
+        .topbar-content .tobar-right {
+            float: right;
+        }
+        
+        .tobar-right .shopping-cart {
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            margin-left: 20px;
+            height: 40px;
+            background-color: #424242;
+        }
+        
+        .topbar-content span {
+            color: #424242;
+        }
+        
+        .seach {
+            height: 100px;
+            line-height: 100px;
+        }
+        
+        .seach .logo {
+            float: left;
+            width: 56px;
+            height: 56px;
+            margin-top: 22px;
+            background: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png)no-repeat;
+            background-size: cover;
+        }
+        
+        .goods-nav {
+            float: left;
+            margin-left: 120px;
+            height: 100px;
+            width: 700px;
+        }
+        
+        .nav-list li {
+            float: left;
+        }
+        
+        .nav-list li a {
+            display: inline-block;
+            height: 100px;
+            padding: 0 10px;
+            color: black;
+        }
+        
+        .goods-nav .nav-list a:hover {
+            color: #ff6a00;
+        }
+        
+        .seach-box {
+            float: right;
+            width: 300px;
+            height: 100px;
+            font-size: 14px;
+        }
+        
+        .seach-box .box {
+            margin-top: 25px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .seach-box .box input {
+            float: left;
+            width: 215px;
+            height: 100%;
+            text-indent: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .seach-box .box a {
+            float: right;
+            width: 82px;
+            color: #616161;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .seach-box .box input:focus {
+            border: 1px solid #ff6a00;
+        }
+        
+        .seach-box .box .seach-r:hover {
+            background-color: #ff6a00;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="xiaomi">
+        <div class="header">
+            <div class="topbar">
+                <div class="main">
+                    <!-- 顶部导航 -->
+                    <div class="topbar-content">
+                        <div class="tobar-left">
+                            <a href="javascript:;">小米商城</a>
+                            <span>|</span>
+                            <a href="javascript:;">MIUI</a>
+                            <span>|</span>
+                            <a href="javascript:;">loT</a>
+                            <span>|</span>
+                            <a href="javascript:;">云服务</a>
+                            <span>|</span>
+                            <a href="javascript:;">天星数科</a>
+                            <span>|</span>
+                            <a href="javascript:;">小爱开放平台</a>
+                            <span>|</span>
+                            <a href="javascript:;">企业团购</a>
+                            <span>|</span>
+                            <a href="javascript:;">资质证照</a>
+                            <span>|</span>
+                            <a href="javascript:;">协议规则</a>
+                            <span>|</span>
+                            <a href="javascript:;">下载app</a>
+                            <span>|</span>
+                            <a href="javascript:;">智能生活</a>
+                            <span>|</span>
+                            <a href="javascript:;">select location</a>
+                            <span>|</span>
+                        </div>
+                        <div class="tobar-right">
+
+                            <a href="javascript:;">登录</a>
+                            <span>|</span>
+                            <a href="javascript:;">注册</a>
+                            <span>|</span>
+
+                            <a href="javascript:;">消息通知</a>
+                            <a href="javascript:;" class="shopping-cart">购物车</a>
+                        </div>
+                    </div>
+                    <div class="seach">
+                        <div class="logo">
+                            <a href="https://www.mi.com/index.html"></a>
+                        </div>
+                        <div class="goods-nav">
+                            <ul class="nav-list">
+                                <li><a href="javascript:;">小米手机</a></li>
+                                <li><a href="javascript:;">Redmi红米</a></li>
+                                <li><a href="javascript:;">电视</a></li>
+                                <li><a href="javascript:;">笔记本</a></li>
+                                <li><a href="javascript:;">平板</a></li>
+                                <li><a href="javascript:;">家电</a></li>
+                                <li><a href="javascript:;">路由器</a></li>
+                                <li><a href="javascript:;">智能硬件</a></li>
+                                <li><a href="javascript:;">服务</a></li>
+                                <li><a href="javascript:;">社区</a></li>
+                            </ul>
+                        </div>
+                        <div class="seach-box">
+                            <div class="box">
+                                <input type="serch" placeholder="小米" />
+                                <a href="" class="seach-r">搜索</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 主体部分 -->
+                    <div class="container">
+                        <!-- 分类列表 -->
+                        <div class="home-hero">
+                            <div class="site-category">
+                                <ul>
+                                    <li><a href="javascript:;" class="title">手机<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">电视<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">笔记本 平板<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">家电<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">出行<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">智能 路由器<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">电源 配件<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">健康 儿童<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">耳机 音箱<span>&gt;</span></a></li>
+                                    <li><a href="javascript:;" class="title">生活 箱包<span>&gt;</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- 轮播图 -->
+                            <div class="swiper">
+                                <div class="arrow-l"></div>
+                                <div class="arrow-r"></div>
+                                <div class="swiper-item">
+                                    <ul class="swiper-ul clearfix">
+                                        <li>
+                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/918820682e4a490221cfd92b24c14b86.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="" class="show">
+                                        </li>
+                                        <li>
+                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/93dd3a588aebaa0b01b4e826a70644b1.jpg?w=2452&h=920" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/67c7222fbcf98db942718eaf29f32297.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a532e33470d046b3f044d5ea49fc5e9e.png?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="dot">
+                                    <span class="current"></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-hero-sub">
+                            <div class="server">
+                                <ul class="icon-list clearfix">
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48" alt="">保障服务</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48" alt="">企业团购</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48" alt="">F码通道</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48" alt="">米粉卡</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48" alt="">以旧换新</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48" alt="">话费充值</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="server-r">
+                                <ul class="server-list clearfix">
+                                    <li>
+                                        <a href="javascript:;"></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------------- -->
+
+                </div>
+                <div class="page-main">
+                    <div class="container">
+                        <!-- ------>
+                        <div class="banner-box">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f334fbd05d5681bb838fefd1c815d88c.jpg?thumb=1&w=1226&h=120&f=webp&q=90" alt="">
+                        </div>
+                        <!-- 手机列表 -->
+                        <div class="home-brick-box">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h2>手机</h2>
+                                    <div class="more"><a href="script:;">查看更多&gt</a></div>
+                                </div>
+                                <div class="phone-list">
+                                    <div class="left">
+                                    </div>
+                                    <div class="right">
+                                        <div class="right-item">
+                                            <ul>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8909080ddb0851af0b87530e2927844f.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item"> Redmi Note 10 5G</div>
+                                                        <div class="content-item">5G小金刚｜旗舰长续航</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1099元起</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab07e0fcbec3beb8b0f409db8bee8da4.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item"> Xiaomi MIX 4</div>
+                                                        <div class="content-item">CUP全面屏</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">4999元起</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 手机列表 -->
+                        <div class="home-brick-box">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h2>手机</h2>
+                                    <div class="more"><a href="script:;">查看更多&gt</a></div>
+                                </div>
+                                <div class="phone-list">
+                                    <div class="left">
+                                    </div>
+                                    <div class="right">
+                                        <div class="right-item">
+                                            <ul>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8909080ddb0851af0b87530e2927844f.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item"> Redmi Note 10 5G</div>
+                                                        <div class="content-item">5G小金刚｜旗舰长续航</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1099元起</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab07e0fcbec3beb8b0f409db8bee8da4.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item"> Xiaomi MIX 4</div>
+                                                        <div class="content-item">CUP全面屏</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">4999元起</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="item-list">
+                                                    <a href="script:;">
+                                                        <div>
+                                                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                                                        </div>
+                                                        <div class="title-item">Note 10 Pro</div>
+                                                        <div class="content-item">天玑1100年度旗舰芯</div>
+                                                        <div class="price">
+                                                            <span class="sale-price">1599元起</span>
+                                                            <del class="original-price">1699元</del>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="home-tool-bar">
+        <a href="javascript:;" class="item">
+            <div class="icon">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png" alt="" class="static">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png" alt="" class="hover">
+            </div>
+            <span class="text">手机APP</span>
+            <div class="pop-content">
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/78c30d4f259ed43ab20e810a522a6249.png" alt="">
+                <span>扫码领取新人百元礼包</span>
+            </div>
+        </a>
+        <a href="javascript:;" class="item">
+            <div class="icon">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png" alt="" class="static">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png" alt="" class="hover">
+            </div>
+            <span class="text"> 个人中心</span>
+        </a>
+        <a href="javascript:;" class="item">
+            <div class="icon">
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png" alt="" class="static">
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png" alt="" class="hover">
+            </div>
+            <span class="text">
+                售后服务</span>
+        </a>
+        <a href="javascript:;" class="item">
+            <div class="icon">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png" alt="" class="static">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png" alt="" class="hover">
+            </div>
+            <span class="text"> 人工客服</span>
+        </a>
+        <a href="javascript:;" class="item">
+            <div class="icon">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png" alt="" class="static">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png" alt="" class="hover">
+            </div>
+            <span class="text">购物车</span>
+        </a>
+    </div>
+    <script src="swipper2.js"></script>
+</body>
+
+</html>
